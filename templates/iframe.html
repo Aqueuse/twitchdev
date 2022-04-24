@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8">
+    <title>overlay</title>
+
+    <style>
+        .streamerFrame {
+            z-index: 0;
+        }
+
+        .streamerName {
+            color: #00ff00;
+            background-color: #6d6d6d;
+            padding: 10px;
+            text-align: center;
+            font-size: xx-large;
+            position: absolute;
+            top: 0px;
+            left: 40%;
+            z-index: 1;
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+<script src="{{ url_for('static', filename='overlay.js') }}"></script>
+<script src="{{ url_for('static', filename='tmi.min.js') }}"></script>
+
+<script>
+const client = new tmi.Client({
+       options: { debug: true, messagesLogLevel: "info" },
+       connection: {
+          reconnect: true,
+          secure: true
+       },
+       identity: {
+          username: 'Aqueuse',
+          password: 'oauth:ugvg2q7ptguakokgmcw2s6ugolsmn5'
+       },
+       channels: [ 'Aqueuse' ]
+});
+
+client.connect().catch(console.error);
+
+client.on('message', (channel, tags, message, self) => {
+    if(self|| !message.startsWith('!')) return;
+    rewardTriger(client, channel, message.toLowerCase().substring(1), tags.username);
+});
+
+function rewardTriger(client, channel, message, username) {
+    message = message.split(" ");
+    let command = message[0];
+    let twitch_pseudonyme = String(message.slice(1));
+
+  if (command !== "so") {
+    return;
+  }
+  if (command === "so") {
+    if (message.slice(" ").length > 1) {
+        if (twitch_pseudonyme.split("/").length == 1) {
+            client.say(channel, "so pour https://twitch.tv/"+twitch_pseudonyme);
+            document.getElementById("streamerFrame").src = "https://player.twitch.tv/?channel="+twitch_pseudonyme+"&parent=localhost"
+            document.getElementById("streamerName").textContent = twitch_pseudonyme;
+        }
+    }
+    else {
+      client.say(channel, "tapez !so le pseudo twitch pour afficher le stream d'un dev");
+      return;
+    }
+  }
+}
+</script>
+
+<div>
+<iframe
+    class="streamerFrame"
+    id="streamerFrame"
+    src="https://player.twitch.tv/?channel=pyompy&parent=localhost"
+    height="1080"
+    width="1920"
+    allowfullscreen>
+</iframe>
+    <p id="streamerName" class="streamerName">Pyompy</p>
+</div>
+
+</body>

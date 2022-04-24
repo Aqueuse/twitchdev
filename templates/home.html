@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="refresh" content="300">
+    <meta charset="UTF-8">
+    <title>Twitch Dev Now</title>
+
+    <style>
+        .thumbails {
+            display:flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2vw;
+        }
+
+        .thumbail_box {
+            color: #61FF3C;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .streamTitle {
+            color: #2AFFFF;
+        }
+</style>
+</head>
+<body>
+
+
+<div class="thumbails">
+{% for streamer in data %}
+    <div class="thumbail_box">
+        <p>{{ streamer["user_name"] }}</p>
+        <p class="streamTitle">{{ streamer["title"]|truncate(20, True) }}</p>
+        <img src="{{ streamer['thumbnail_url'] }}">
+    </div>
+{% endfor %}
+</div>
+</body>
+</html>
