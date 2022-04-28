@@ -59,7 +59,7 @@ function rewardTriger(client, channel, message, username) {
     if (message.slice(" ").length > 1) {
         if (twitch_pseudonyme.split("/").length == 1) {
             client.say(channel, "so pour https://twitch.tv/"+twitch_pseudonyme);
-            document.getElementById("streamerFrame").src = "https://player.twitch.tv/?channel="+twitch_pseudonyme+"&parent=localhost"
+            document.getElementById("streamerFrame").src = "https://player.twitch.tv/?channel="+twitch_pseudonyme+"&parent=twitch-code.fr"
             document.getElementById("streamerName").textContent = twitch_pseudonyme;
         }
     }
