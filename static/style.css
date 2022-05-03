@@ -1,0 +1,49 @@
+/* THE SWITCH TO SHOW/HIDE BACKGROUND FOR STREAMING INTEGRATION */
+.switchContainer {
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.twitchLogo {
+    width:30px;
+    height:auto;
+}
+
+/* THE STREAMERS THUMBAILS */
+.thumbails {
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.thumbail_box {
+    color: #61FF3C;
+    font-size: 22px;
+    text-align: center;
+}
+
+.streamTitle {
+    color: #2AFFFF;
+}
+
+/* THE STREAMER FRAME */
+.streamerFrame {
+    z-index: 0;
+}
+
+.streamerName {
+    color: #00ff00;
+    background-color: #6d6d6d;
+    padding: 10px;
+    text-align: center;
+    font-size: xx-large;
+    position: absolute;
+    top: 0px;
+    left: 40%;
+    z-index: 1;
+    font-size: 80px;
+}
