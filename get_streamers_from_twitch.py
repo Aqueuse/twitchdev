@@ -4,7 +4,7 @@ import json
 connection = http.client.HTTPSConnection("api.twitch.tv")
 payload = ''
 headers = {
-    'Client-Id': 'token',
+    'Client-Id': 'id',
     'Authorization': 'Bearer token'
 }
 

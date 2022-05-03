@@ -1,26 +1,8 @@
 <!DOCTYPE html>
 <head>
    <meta charset="UTF-8">
+    <link type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>overlay</title>
-
-    <style>
-        .streamerFrame {
-            z-index: 0;
-        }
-
-        .streamerName {
-            color: #00ff00;
-            background-color: #6d6d6d;
-            padding: 10px;
-            text-align: center;
-            font-size: xx-large;
-            position: absolute;
-            top: 0px;
-            left: 40%;
-            z-index: 1;
-            font-size: 80px;
-        }
-    </style>
 </head>
 <body>
 <script src="{{ url_for('static', filename='overlay.js') }}"></script>
