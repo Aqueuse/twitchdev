@@ -17,4 +17,3 @@ def get_streamers():
     for streamer in data:
         streamer["thumbnail_url"] = str(streamer["thumbnail_url"]).replace("{width}", "200").replace("{height}", "128")
     return data
-

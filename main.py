@@ -6,9 +6,13 @@ app = Flask(__name__)
 
 
 @app.route('/')
+def home():
+    return render_template("home.html")
+
+
+@app.route('/tv')
 def show_streamers():
-    # refresh db
-    return render_template("home.html", data=get_streamers_from_twitch.get_streamers())
+    return render_template("tv.html", data=get_streamers_from_twitch.get_streamers())
 
 
 @app.route('/iframe')
