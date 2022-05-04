@@ -4,11 +4,12 @@ body {
     background-color:#1B1D48;
     color: lightgreen;
     font-size: 2em;
-    font-family: 'Koulen', cursive;
+    font-family: sans-serif;
 }
 
 h1 {
     text-align: center;
+    font-family: 'Koulen', cursive;
 }
 
 a {
