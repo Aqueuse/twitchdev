@@ -41,9 +41,11 @@
 <div class="thumbails">
 {% for streamer in data %}
     <div class="thumbail_box">
-            <p><a href='https://twitch.tv/{{ streamer["user_name"] }}'>{{ streamer["user_name"] }}</a></p>
+        <a href='https://twitch.tv/{{ streamer["user_name"] }}' title='{{ streamer["title"] }}'>
+            <p>{{ streamer["user_name"] }}</p>
             <p class="streamTitle">{{ streamer["title"]|truncate(20, True) }}</p>
-            <img onclick='window.open("https://twitch.tv/{{ streamer["user_name"] }}")' src="{{ streamer['thumbnail_url'] }}">
+        </a>
+        <img onclick='window.open("https://twitch.tv/{{ streamer["user_name"] }}")' src="{{ streamer['thumbnail_url'] }}">
     </div>
 {% endfor %}
 </div>
