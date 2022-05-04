@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
 body {
     background-color:#1B1D48;
     color: lightgreen;
     font-size: 2em;
+    font-family: 'Koulen', cursive;
 }
 
 h1 {
     text-align: center;
+}
+
+a {
+    color: powderblue;
 }
